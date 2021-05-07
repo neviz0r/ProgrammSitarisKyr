@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Домашняя страница";
+}
+
+@model IEnumerable<TourWebVanzonokRV.Models.TourModelVanzonokRV>
+@{
+    ViewData["Title"] = "Список туров";
+}
+<h2>@ViewData["Title"]</h2>
+<p>
+    <a asp-controller="Home" asp-action="Create">Добавить</a>
+</p>
+<table class="table">
+    <tr>
+        <th>ID тура</th>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th>Описание</th>
+        <th>Транспорт</th>
+        <th>Страна</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.tourID</td>
+    <td>@item.title</td>
+    <td>@item.totalSum</td>
+    <td>@item.description</td>
+    <td>@item.transportID</td>
+    <td>@item.countryID</td>
+    <td>
+        <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.tourID">Изменить</a> |
+        <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.tourID">Удалить</a>
+    </td>
+</tr>
+    }
+</table>

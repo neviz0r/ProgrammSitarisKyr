@@ -1,0 +1,39 @@
+﻿@model TourWebVanzonokRV.Models.TourModelVanzonokRV
+
+@{
+    ViewData["Title"] = "Изменить тур";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" asp-controller="Home">
+    <div>
+        <input type="hidden" asp-for="tourID" />
+        <div class="form-group">
+            <label asp-for="title"></label>
+            <input type="text" asp-for="title" class="form-control form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="totalSum"></label>
+            <input asp-for="totalSum" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="description"></label>
+            <input asp-for="description" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="transportID"></label>
+            <input asp-for="transportID" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="countryID"></label>
+            <input asp-for="countryID" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Вернуться к списку</a>
+</div>

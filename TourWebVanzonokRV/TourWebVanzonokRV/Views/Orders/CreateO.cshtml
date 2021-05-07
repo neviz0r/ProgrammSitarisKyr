@@ -1,0 +1,42 @@
+﻿@model TourWebVanzonokRV.Models.OrderModelVanzonokRV
+
+@{
+    ViewData["Title"] = "Новый заказ";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="CreateO" asp-controller="Orders">
+    <div>
+        <div class="form-group">
+            <label asp-for="status">Статус</label>
+            <input type="text" asp-for="status" class="form-control form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="userName">Имя</label>
+            <input asp-for="userName" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="userLastName">Фамилия</label>
+            <input asp-for="userLastName" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="tourID">ID тура</label>
+            <input asp-for="tourID" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="telephone">Телефон</label>
+            <input asp-for="telephone" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="email">Почта</label>
+            <input asp-for="email" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-controller="Orders" asp-action="Privacy">Вернуться к списку</a>
+</div>

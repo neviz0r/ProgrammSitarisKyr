@@ -1,0 +1,26 @@
+﻿@model TourWebVanzonokRV.Models.OrderModelVanzonokRV
+@{
+    ViewData["Title"] = "Удаление заказа";
+}
+<h2>@ViewBag.Title</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Название</dt>
+        <dd>
+            @Model.userName
+            @Model.userLastName
+            @Model.tourID
+        </dd>
+    </dl>
+    <div>
+        <form asp-controller="Orders" asp-action="DeleteO" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Orders" asp-action="Privacy">Вернуться к списку</a>
+</div>

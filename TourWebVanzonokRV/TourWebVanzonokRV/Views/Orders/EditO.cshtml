@@ -1,0 +1,31 @@
+﻿@model TourWebVanzonokRV.Models.OrderModelVanzonokRV
+
+@{
+    ViewData["Title"] = "Изменить заказ";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="EditO" asp-controller="Orders">
+    <div>
+        <input type="hidden" asp-for="orderID" />
+        <div class="form-group">
+            <label asp-for="status">Статус</label>
+            <input asp-for="status" class="form-control form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="userName">Имя</label>
+            <input asp-for="userName" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="tourID">ID тура</label>
+            <input asp-for="tourID" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-controller="Orders" asp-action="Privacy">Вернуться к списку</a>
+</div>

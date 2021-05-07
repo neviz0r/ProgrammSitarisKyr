@@ -1,0 +1,25 @@
+﻿@model TourWebVanzonokRV.Models.TourModelVanzonokRV
+@{
+    ViewData["Title"] = "Удаление тура";
+}
+<h2>@ViewBag.Title</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Название</dt>
+        <dd>
+            @Model.title
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Вернуться к списку</a>
+</div>

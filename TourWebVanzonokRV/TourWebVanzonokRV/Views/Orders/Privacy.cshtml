@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TourWebVanzonokRV.Models.OrderModelVanzonokRV>
+@{
+    ViewData["Title"] = "Список заказов";
+}
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a asp-controller="Orders" asp-action="CreateO">Добавить</a>
+</p>
+<table class="table">
+    <tr>
+        <th>ID заказа</th>
+        <th>Название тура</th>
+        <th>Стоимость тура</th>
+        <th>Статус</th>
+        <th>Имя клиента</th>
+        <th>Фамилия клинта</th>
+        <th>Номер клиента</th>
+        <th>Почта клиента</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.orderID</td>
+    <td>@item.title</td>
+    <td>@item.totalSum</td>
+    <td>@item.status</td>
+    <td>@item.userName</td>
+    <td>@item.userLastName</td>
+    <td>@item.telephone</td>
+    <td>@item.email</td>
+    <td>
+        <a asp-controller="Orders" asp-action="EditO" asp-route-id="@item.orderID">Изменить</a> |
+        <a asp-controller="Orders" asp-action="DeleteO" asp-route-id="@item.orderID">Удалить</a>
+    </td>
+</tr>
+    }
+</table>
